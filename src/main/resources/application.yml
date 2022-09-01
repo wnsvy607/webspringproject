@@ -1,0 +1,8 @@
+application:
+  name : seobpyo
+
+jpa:
+  properties:
+    hibernate:
+      show_sql: true
+      format_sql: true
