@@ -6,3 +6,5 @@ jpa:
     hibernate:
       show_sql: true
       format_sql: true
+
+server.servlet.encoding.force-response: true
