@@ -1,6 +1,7 @@
 package com.seobpyo.webspringproject.web.domain.posts;
 
 
+import com.seobpyo.webspringproject.web.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity     //주요 어노테이션(필수 어노테이션은 클래스에 가깝게 둔다)
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,10 +1,13 @@
 application:
   name : seobpyo
 
-jpa:
-  properties:
-    hibernate:
-      show_sql: true
-      format_sql: true
-
 server.servlet.encoding.force-response: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
