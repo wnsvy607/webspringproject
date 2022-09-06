@@ -31,6 +31,12 @@ dependencies {
 	//h2DB
 	runtimeOnly 'com.h2database:h2'
 
+	// webflux
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	//mustache <- 수많은 언어를 지원하는 가장 심플한 템플릿 엔진
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
 	//this automatically imports assertj library
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 

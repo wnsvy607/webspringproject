@@ -7,6 +7,7 @@ import com.seobpyo.webspringproject.web.dto.PostsSaveRequestDto;
 import com.seobpyo.webspringproject.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import javax.transaction.Transactional;
 
@@ -32,4 +33,11 @@ public class PostsService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + id));
         return new PostsResponseDto(entity);
     }
+
+    //webclient 연습용 메서드
+//    public String getImgUrl(){
+//        String baseUrl = "";
+//        WebClient webClient = WebClient.create();
+//        return "hello";
+//    }
 }
