@@ -39,7 +39,6 @@ dependencies {
 
 	//this automatically imports assertj library
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
 }
 
 tasks.named('test') {
