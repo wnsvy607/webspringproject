@@ -1,7 +1,7 @@
 package com.seobpyo.webspringproject.service.posts;
 
-import com.seobpyo.webspringproject.web.domain.posts.Posts;
-import com.seobpyo.webspringproject.web.domain.posts.PostsRepository;
+import com.seobpyo.webspringproject.domain.posts.Posts;
+import com.seobpyo.webspringproject.domain.posts.PostsRepository;
 import com.seobpyo.webspringproject.web.dto.PostsListResponseDto;
 import com.seobpyo.webspringproject.web.dto.PostsResponseDto;
 import com.seobpyo.webspringproject.web.dto.PostsSaveRequestDto;
@@ -9,7 +9,6 @@ import com.seobpyo.webspringproject.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.stream.Collectors;

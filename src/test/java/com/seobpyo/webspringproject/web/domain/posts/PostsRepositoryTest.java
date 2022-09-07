@@ -1,6 +1,7 @@
 package com.seobpyo.webspringproject.web.domain.posts;
 
-import org.aspectj.lang.annotation.After;
+import com.seobpyo.webspringproject.domain.posts.Posts;
+import com.seobpyo.webspringproject.domain.posts.PostsRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

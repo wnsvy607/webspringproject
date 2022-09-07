@@ -1,6 +1,6 @@
 package com.seobpyo.webspringproject.web.dto;
 
-import com.seobpyo.webspringproject.web.domain.posts.Posts;
+import com.seobpyo.webspringproject.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

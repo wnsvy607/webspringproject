@@ -39,6 +39,9 @@ dependencies {
 
 	//this automatically imports assertj library
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//spring security dependency
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 tasks.named('test') {

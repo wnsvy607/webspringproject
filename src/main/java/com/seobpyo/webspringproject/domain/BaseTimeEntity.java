@@ -1,4 +1,4 @@
-package com.seobpyo.webspringproject.web.domain;
+package com.seobpyo.webspringproject.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

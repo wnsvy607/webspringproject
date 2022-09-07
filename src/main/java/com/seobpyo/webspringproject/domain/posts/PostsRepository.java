@@ -1,4 +1,4 @@
-package com.seobpyo.webspringproject.web.domain.posts;
+package com.seobpyo.webspringproject.domain.posts;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,7 +1,7 @@
 package com.seobpyo.webspringproject.web;
 
-import com.seobpyo.webspringproject.web.domain.posts.Posts;
-import com.seobpyo.webspringproject.web.domain.posts.PostsRepository;
+import com.seobpyo.webspringproject.domain.posts.Posts;
+import com.seobpyo.webspringproject.domain.posts.PostsRepository;
 import com.seobpyo.webspringproject.web.dto.PostsSaveRequestDto;
 
 import com.seobpyo.webspringproject.web.dto.PostsUpdateRequestDto;

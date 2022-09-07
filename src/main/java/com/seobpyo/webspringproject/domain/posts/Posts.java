@@ -1,7 +1,7 @@
-package com.seobpyo.webspringproject.web.domain.posts;
+package com.seobpyo.webspringproject.domain.posts;
 
 
-import com.seobpyo.webspringproject.web.domain.BaseTimeEntity;
+import com.seobpyo.webspringproject.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
