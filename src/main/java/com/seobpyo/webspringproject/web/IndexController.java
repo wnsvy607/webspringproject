@@ -1,5 +1,6 @@
 package com.seobpyo.webspringproject.web;
 
+import com.seobpyo.webspringproject.config.auth.dto.SessionUser;
 import com.seobpyo.webspringproject.service.posts.PostsService;
 import com.seobpyo.webspringproject.web.dto.PostsResponseDto;
 import lombok.Getter;
@@ -9,16 +10,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
 
         model.addAttribute("posts", postsService.findAllDesc());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+
+        if(user != null){
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
 //        앞으로는 src/main/resources/templates로, 뒤의 파일 확장자는 .mustache가 붙는다.
 //        즉, src/maun/resourcex/templates/index.mustache로 전환되어 View Resolver가 처리하게 됩니다.
