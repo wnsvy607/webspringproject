@@ -1,0 +1,12 @@
+application:
+  name : seobpyo
+
+server.servlet.encoding.force-response: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true

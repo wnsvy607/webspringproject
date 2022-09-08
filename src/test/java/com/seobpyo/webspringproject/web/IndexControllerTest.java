@@ -20,7 +20,7 @@ class IndexControllerTest {
         String body = this.restTemplate.getForObject("/", String.class);
 
         //then
-        assertThat(body).contains("Jun-Pyo's Spring Boot Web Service");
+        assertThat(body).contains("스프링 부트 웹 서비스");
     }
 
 }
