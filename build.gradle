@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.seobpyo'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 configurations {
@@ -44,7 +44,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 	//spring-session-jdbc 등록
-//	implementation 'org.springframework.session:spring-session-jdbc'
+	implementation 'org.springframework.session:spring-session-jdbc'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
 

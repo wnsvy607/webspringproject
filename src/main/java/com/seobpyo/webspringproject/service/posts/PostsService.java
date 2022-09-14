@@ -6,11 +6,25 @@ import com.seobpyo.webspringproject.web.dto.PostsListResponseDto;
 import com.seobpyo.webspringproject.web.dto.PostsResponseDto;
 import com.seobpyo.webspringproject.web.dto.PostsSaveRequestDto;
 import com.seobpyo.webspringproject.web.dto.PostsUpdateRequestDto;
+import io.netty.channel.ChannelOption;
+import io.netty.handler.timeout.ReadTimeoutHandler;
+import io.netty.handler.timeout.WriteTimeoutHandler;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.WebClient.RequestBodySpec;
+import org.springframework.web.reactive.function.client.WebClient.UriSpec;
+import reactor.core.publisher.Mono;
+import reactor.netty.http.client.HttpClient;
 
+import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 
@@ -18,6 +32,7 @@ import java.util.stream.Collectors;
 @Service
 public class PostsService {
     private final PostsRepository postsRepository;
+    private final WebClient webClient;
 
     @Transactional
     public Long save(PostsSaveRequestDto requestDto) {
@@ -53,10 +68,21 @@ public class PostsService {
         postsRepository.delete(posts);
     }
 
-    //webclient 연습용 메서드
-//    public String getImgUrl(){
-//        String baseUrl = "";
-//        WebClient webClient = WebClient.create();
-//        return "hello";
-//    }
+    //    webclient 연습용 메서드
+    public String getImgUrl(){
+        String baseUrl = "localhost:9999/";
+        String defaultValue = "default";
+        Mono<String> result = webClient.get()
+                .uri(baseUrl + "hello")
+                .accept(MediaType.APPLICATION_JSON)
+                .retrieve()
+                .bodyToMono(String.class);
+        return result.blockOptional().orElse(defaultValue);
+    }
+
+    public void postImg() {
+
+
+    }
+
 }
