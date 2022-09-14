@@ -10,6 +10,6 @@ public class ControllerErrorAdvice {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(Exception.class)
     public ErrorResponse handleAllExceptions(){
-        return new ErrorResponse("Error");
+        return new ErrorResponse("Exception occur");
     }
 }

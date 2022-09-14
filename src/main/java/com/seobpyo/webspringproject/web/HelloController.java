@@ -3,7 +3,10 @@ package com.seobpyo.webspringproject.web;
 import com.seobpyo.webspringproject.service.posts.PostsService;
 import com.seobpyo.webspringproject.web.dto.ErrorResponse;
 import com.seobpyo.webspringproject.web.dto.HelloResponseDto;
+import com.sun.istack.NotNull;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class HelloController {
@@ -32,12 +35,8 @@ public class HelloController {
     }
 
     @PostMapping("/img")
-    public void PostImgRequest() {
-
-    }
-    @ExceptionHandler(value = Exception.class)
-    public ErrorResponse handle(Exception e){
-        return new ErrorResponse("Error");
+    public String PostImgRequest(@NotNull @RequestParam MultipartFile file) {
+        return postsService.postImg(file);
     }
 
 }

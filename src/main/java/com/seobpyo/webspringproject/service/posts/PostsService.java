@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClient.RequestBodySpec;
 import org.springframework.web.reactive.function.client.WebClient.UriSpec;
@@ -80,9 +81,21 @@ public class PostsService {
         return result.blockOptional().orElse(defaultValue);
     }
 
-    public void postImg() {
+    public String postImg(MultipartFile file) {
+        if(file.isEmpty()){
+            return "Error occur";
+        }
+        String baseUrl = "localhost:9999/file_upload";
+        String defaultValue = "default";
+        HttpHeaders headers = new HttpHeaders();
 
-
+        Mono<String> result = webClient.post()
+                .uri(baseUrl)
+                .contentType(MediaType.MULTIPART_FORM_DATA)
+                .body(Mono.just(file), MultipartFile.class)
+                .retrieve()
+                .bodyToMono(String.class);
+        return result.blockOptional().orElse(defaultValue);
     }
 
 }
